@@ -1,20 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://oru54q3f2ldg"]
+[gd_scene load_steps=4 format=3 uid="uid://oru54q3f2ldg"]
 
 [ext_resource type="Script" uid="uid://cfi16wxmklfec" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://chrwlxfo51nd5" path="res://droid.png" id="2_onrkg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gkcl"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 7.0
+height = 26.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1gkcl")
+position = Vector2(2, 3)
+shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_onrkg")
