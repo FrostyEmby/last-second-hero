@@ -16,8 +16,6 @@ size = Vector2(1699, 20)
 b = Vector2(0, 461)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t33uu"]
-rough = true
-absorbent = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_231t4"]
 radius = 24.083189
@@ -58,13 +56,16 @@ tile_set = ExtResource("2_vm22h")
 
 [node name="Player" parent="." instance=ExtResource("1_xtwgx")]
 position = Vector2(164, -27)
-collision_mask = 6
+collision_mask = 7
+platform_floor_layers = 4294967044
+platform_wall_layers = 4
+accel = 20
 
 [node name="Boulder" type="RigidBody2D" parent="."]
 position = Vector2(333, -47)
-collision_layer = 2
+collision_layer = 3
+collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_t33uu")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boulder"]
 shape = SubResource("CircleShape2D_231t4")

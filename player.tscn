@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://oru54q3f2ldg"]
+[gd_scene load_steps=5 format=3 uid="uid://oru54q3f2ldg"]
 
 [ext_resource type="Script" uid="uid://cfi16wxmklfec" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://chrwlxfo51nd5" path="res://droid.png" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://b80c6b8ty6bhd" path="res://ui.tscn" id="3_i3pqv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 7.0
@@ -15,10 +16,12 @@ position = Vector2(2, 3)
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
+zoom = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
 texture = ExtResource("2_onrkg")
+
+[node name="Death Clock" parent="." instance=ExtResource("3_i3pqv")]
+size_flags_horizontal = 4
+size_flags_vertical = 4

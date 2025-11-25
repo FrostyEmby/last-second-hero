@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b80c6b8ty6bhd"]
+
+[ext_resource type="Script" uid="uid://ce33ppkdcca70" path="res://ui.gd" id="1_fyqef"]
+
+[node name="Death Clock" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fyqef")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 25.0
+offset_bottom = -7.0
+text = "20.00"
+clip_text = true
+text_overrun_behavior = 1
